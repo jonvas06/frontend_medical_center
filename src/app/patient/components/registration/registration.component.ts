@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-registration',
+  selector: 'register-patient',
   standalone: true,
   imports: [],
   templateUrl: './registration.component.html',

@@ -1,9 +1,12 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-appointment',
+  standalone: true,
   templateUrl: './appointment.component.html',
+  imports: [ReactiveFormsModule],
   styleUrls: ['./appointment.component.css']
 })
 
