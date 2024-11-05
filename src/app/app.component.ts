@@ -4,6 +4,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { RegistrationComponent } from './patient/components/registration/registration.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AppointmentComponent } from './patient/components/appointment/appointment.component';
+
 @Component({
   selector: 'app-root',
   standalone: true,
