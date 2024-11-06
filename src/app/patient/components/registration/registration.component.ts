@@ -11,7 +11,7 @@ import { PatientService } from '../../../services/patient.service';
   styleUrls: ['./registration.component.css'],
   providers: [PatientService]
 })
-export class RegistrationComponent {
+export class PatientRegistrationComponent {
   registrationForm: FormGroup;
 
   constructor(private fb: FormBuilder, private patientService: PatientService) {

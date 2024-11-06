@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterLink, RouterOutlet } from '@angular/router';
 import { NavbarComponent } from './navbar/navbar.component';
-import { RegistrationComponent } from './patient/components/registration/registration.component';
+import { PatientRegistrationComponent } from './patient/components/registration/registration.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AppointmentComponent } from './patient/components/appointment/appointment.component';
 
@@ -11,7 +11,7 @@ import { AppointmentComponent } from './patient/components/appointment/appointme
   imports: [
     RouterOutlet, 
     NavbarComponent,
-    RegistrationComponent,
+    PatientRegistrationComponent,
     AppointmentComponent,
     RouterLink,
     ReactiveFormsModule

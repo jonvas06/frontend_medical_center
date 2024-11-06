@@ -12,7 +12,7 @@ import { DoctorService } from '../../../services/doctor.service';
   styleUrls: ['./registration.component.css'],
   providers: [DoctorService]
 })
-export class RegistrationComponent {
+export class DoctorRegistrationComponent {
   registrationForm: FormGroup;
 
   constructor(private fb: FormBuilder, private doctorService: DoctorService) {
