@@ -21,10 +21,10 @@ export class PatientRegistrationComponent {
       patientFSame: ['', Validators.required],
       patientSSame: ['', Validators.required],
       patientemail: ['', Validators.required],
-      patientdirec: ['', Validators.required],
       patientphone: ['', Validators.required],
       pant_daybir: ['', Validators.required],
       pant_passwo: ['', Validators.required],
+      pant_document: ['', Validators.required],
     });
   }
 
@@ -40,6 +40,7 @@ export class PatientRegistrationComponent {
         daybir: this.registrationForm.value.pant_daybir,
         eemail: this.registrationForm.value.patientemail,
         passwo: this.registrationForm.value.pant_passwo,
+        document: this.registrationForm.value.pant_document,
       };
 
       this.patientService.registerPatient(formData).subscribe(

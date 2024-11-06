@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { PatientService } from '../../../services/patient.service';
 import { DoctorService } from '../../../services/doctor.service';
 
 @Component({
@@ -23,7 +22,9 @@ export class DoctorRegistrationComponent {
       user_slname: ['', Validators.required],
       user_eemail: ['', Validators.required],
       user_phonee: ['', Validators.required],
+      user_daybir: ['', Validators.required],
       user_passwo: ['', Validators.required],
+      user_document: ['', Validators.required],
     });
   }
 
@@ -39,6 +40,7 @@ export class DoctorRegistrationComponent {
         daybir: this.registrationForm.value.user_eemail,
         eemail: this.registrationForm.value.user_phonee,
         passwo: this.registrationForm.value.user_passwo,
+        document: this.registrationForm.value.user_document,
       };
 
       this.doctorService.registerDoctor(formData).subscribe(

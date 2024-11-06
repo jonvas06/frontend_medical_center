@@ -1,5 +1,11 @@
 <h2>Registro de Paciente</h2>
 <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+
+    <div>
+        <label for="pant_document">Documento Paciente:</label>
+        <input id="pant_document" formControlName="pant_document" required />
+    </div>
+
     <div>
         <label for="patientFName">Primer Nombre:</label>
         <input id="patientFName" formControlName="patientFName" required />
@@ -12,17 +18,12 @@
 
     <div>
         <label for="patientFSame">Primer apellido:</label>
-        <input type="number" id="patientFSame" formControlName="patientFSame" required />
+        <input id="patientFSame" formControlName="patientFSame" required />
     </div>
 
     <div>
         <label for="patientSSame">Segundo apellido:</label>
-        <input type="number" id="patientSSame" formControlName="patientSSame" required />
-    </div>
-
-    <div>
-        <label for="patientdirec">Dirección:</label>
-        <input id="patientdirec" formControlName="patientdirec" required />
+        <input id="patientSSame" formControlName="patientSSame" required />
     </div>
 
     <div>

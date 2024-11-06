@@ -4,6 +4,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { PatientRegistrationComponent } from './patient/components/registration/registration.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AppointmentComponent } from './patient/components/appointment/appointment.component';
+import { DoctorRegistrationComponent } from './doctor/components/registration/registration.component';
 
 @Component({
   selector: 'app-root',
@@ -12,6 +13,7 @@ import { AppointmentComponent } from './patient/components/appointment/appointme
     RouterOutlet, 
     NavbarComponent,
     PatientRegistrationComponent,
+    DoctorRegistrationComponent,
     AppointmentComponent,
     RouterLink,
     ReactiveFormsModule

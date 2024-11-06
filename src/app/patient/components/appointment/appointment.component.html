@@ -1,33 +1,13 @@
 <h2>Agendar Cita</h2>
 <form [formGroup]="appointmentForm" (ngSubmit)="onSubmit()">
     <div>
-        <label for="patientName">Nombre del Paciente:</label>
+        <label for="patientName">Documento del paciente al cual se le va a agendar la cita:</label>
         <input id="patientName" formControlName="patientName" required />
     </div>
 
     <div>
         <label for="appointmentDate">Fecha de la Cita:</label>
         <input type="date" id="appointmentDate" formControlName="appointmentDate" required />
-    </div>
-
-    <div>
-        <label for="startTime">Hora de Inicio:</label>
-        <input type="time" id="startTime" formControlName="startTime" required />
-    </div>
-
-    <div>
-        <label for="endTime">Hora de Fin:</label>
-        <input type="time" id="endTime" formControlName="endTime" required />
-    </div>
-
-    <div>
-        <label for="speciality">Especialidad:</label>
-        <input id="speciality" formControlName="speciality" required />
-    </div>
-
-    <div>
-        <label for="notes">Notas Adicionales:</label>
-        <textarea id="notes" formControlName="notes"></textarea>
     </div>
 
     <button type="submit" [disabled]="appointmentForm.invalid">Agendar Cita</button>

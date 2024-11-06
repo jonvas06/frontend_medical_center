@@ -1,5 +1,11 @@
 <h2>Registro de Doctor</h2>
 <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+    
+    <div>
+        <label for="user_document">Documento Doctor:</label>
+        <input id="user_document" formControlName="user_document" required />
+    </div>
+
     <div>
         <label for="user_ffname">Primer Nombre:</label>
         <input id="user_ffname" formControlName="user_ffname" required />
@@ -21,23 +27,23 @@
     </div>
 
     <div>
-        <label for="user_eemail">Email:</label>
-        <input id="user_eemail" formControlName="user_eemail" required />
-    </div>
-
-    <div>
         <label for="user_phonee">Teléfono:</label>
         <input id="user_phonee" formControlName="user_phonee" required />
     </div>
 
     <div>
-        <label for="patientemail">Correo Electrónico:</label>
-        <input type="email" id="patientemail" formControlName="patientemail" required />
+        <label for="user_daybir">Fecha de Nacimiento:</label>
+        <input type="date" id="user_daybir" formControlName="user_daybir" required />
     </div>
 
     <div>
-        <label for="pant_passwo">Contraseña:</label>
-        <input type="password" id="pant_passwo" formControlName="pant_passwo" required />
+        <label for="user_eemail">Correo Electrónico:</label>
+        <input type="email" id="user_eemail" formControlName="user_eemail" required />
+    </div>
+
+    <div>
+        <label for="user_passwo">Contraseña:</label>
+        <input type="password" id="user_passwo" formControlName="user_passwo" required />
     </div>
 
     <button type="submit" [disabled]="registrationForm.invalid">Registrar Doctor</button>
