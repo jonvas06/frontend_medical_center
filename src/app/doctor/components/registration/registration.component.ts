@@ -24,7 +24,7 @@ export class DoctorRegistrationComponent {
       user_phonee: ['', Validators.required],
       user_daybir: ['', Validators.required],
       user_passwo: ['', Validators.required],
-      user_document: ['', Validators.required],
+      user_docume: ['', Validators.required],
     });
   }
 
@@ -40,7 +40,7 @@ export class DoctorRegistrationComponent {
         daybir: this.registrationForm.value.user_eemail,
         eemail: this.registrationForm.value.user_phonee,
         passwo: this.registrationForm.value.user_passwo,
-        document: this.registrationForm.value.user_document,
+        docume: this.registrationForm.value.user_document,
       };
 
       this.doctorService.registerDoctor(formData).subscribe(

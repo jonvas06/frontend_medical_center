@@ -1,35 +1,43 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClient } from '@angular/common/http'; // Importa HttpClient
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-appointment',
   standalone: true,
   templateUrl: './appointment.component.html',
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, CommonModule],
   styleUrls: ['./appointment.component.css']
 })
-
 export class AppointmentComponent {
   appointmentForm: FormGroup;
+  patientData: any; // Variable para almacenar los datos del paciente
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private http: HttpClient) {
     this.appointmentForm = this.fb.group({
-      patientName: ['', Validators.required],
+      patientDocument: ['', Validators.required],
       appointmentDate: ['', Validators.required],
-      startTime: ['', Validators.required],
-      endTime: ['', Validators.required],
-      speciality: ['', Validators.required],
-      notes: ['']
     });
   }
 
   onSubmit(): void {
     if (this.appointmentForm.valid) {
-      console.log('Appointment Data:', this.appointmentForm.value);
-      // Aquí iría la lógica para enviar los datos al backend
+      const documentValue = this.appointmentForm.get('patientDocument')?.value;
+      
+      // Llamada HTTP al backend con el documento ingresado
+      this.http.post('http://localhost:3000/find/user', { docume: documentValue }).subscribe({
+        next: (response: any) => {
+          this.patientData = response.pant; 
+          console.log('Datos del paciente:', this.patientData);
+        },
+        error: (error) => {
+          console.error('Error al obtener los datos del paciente', error);
+        }
+      });
     } else {
-      console.log('Form is not valid');
+      console.log('Formulario no válido');
     }
   }
 }
