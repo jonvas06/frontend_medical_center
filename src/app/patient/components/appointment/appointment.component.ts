@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
-import { HttpClient } from '@angular/common/http'; // Importa HttpClient
+import { HttpClient, HttpClientModule, provideHttpClient } from '@angular/common/http'; // Importa HttpClient
 import { CommonModule } from '@angular/common';
 
 @Component({

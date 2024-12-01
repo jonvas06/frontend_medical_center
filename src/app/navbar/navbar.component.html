@@ -3,14 +3,12 @@
       <img src="../../assets/logo.jpg" alt="Logo Salud y Vida" class="logo">
     </div>
     <ul class="navbar-links">
-      <li><a href="#inicio">Inicio</a></li>
-      <li><a class="button" href="/agendar-cita">Agendar Cita</a></li>
-      <li><a class="button" href="/register-patient">Registrar Paciente</a></li>
-      <li><a class="button" href="/register-doctor">Registrar Doctor</a></li>    
-      <li><a href="#servicios">Servicios</a></li>
-      <li><a href="#contacto">Contacto</a></li>
+      <li><a routerLink="">Inicio</a></li>
+      <li><a class="button" routerLink="agendar-cita">Agendar Cita</a></li>
+      <li><a class="button" routerLink="/register-patient">Registrar Paciente</a></li>
+      <li><a class="button" routerLink="/register-doctor">Registrar Doctor</a></li>    
+      <li><a routerLink="#servicios">Servicios</a></li>
+      <li><a routerLink="#contacto">Contacto</a></li>
     </ul>
 </nav>
-
-
-  
+<router-outlet/>

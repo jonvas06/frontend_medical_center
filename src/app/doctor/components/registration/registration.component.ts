@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
 import { DoctorService } from '../../../services/doctor.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'register-doctor',
   standalone: true,
-  imports: [ReactiveFormsModule, HttpClientModule],
+  imports: [ReactiveFormsModule],
   templateUrl: './registration.component.html',
   styleUrls: ['./registration.component.css'],
   providers: [DoctorService]

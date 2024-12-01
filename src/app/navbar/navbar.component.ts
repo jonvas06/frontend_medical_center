@@ -7,7 +7,7 @@ import { DoctorRegistrationComponent } from '../doctor/components/registration/r
 @Component({
   selector: 'app-navbar',
   standalone: true,
-  imports: [PatientRegistrationComponent,DoctorRegistrationComponent, RouterLink, RouterOutlet],
+  imports: [RouterLink, RouterOutlet],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.css'
 })
