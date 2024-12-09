@@ -16,18 +16,20 @@ export class PatientRegistrationComponent {
   constructor(private fb: FormBuilder, private patientService: PatientService) {
     this.registrationForm = this.fb.group({
       patientFName: ['', Validators.required],
-      patientSName: ['', Validators.required],
+      patientSName: [''],
       patientFSame: ['', Validators.required],
-      patientSSame: ['', Validators.required],
-      patientemail: ['', Validators.required],
-      patientphone: ['', Validators.required],
-      pant_daybir: ['', Validators.required],
-      pant_passwo: ['', Validators.required],
-      pant_document: ['', Validators.required],
+      patientSSame: [''],
+      patientemail: ['', Validators.required], //requerido
+      patientphone: [''],  
+      pant_daybir: [''],
+      pant_passwo: ['', Validators.required],//requerido
+      pant_document: ['', Validators.required],//requerido
     });
   }
 
   onSubmit(): void {
+    console.log("Probando");
+    
     if (this.registrationForm.valid) {
       const formData = {
         audsta: 'A',
@@ -37,10 +39,11 @@ export class PatientRegistrationComponent {
         flname: this.registrationForm.value.patientFSame,
         slname: this.registrationForm.value.patientSSame,
         daybir: this.registrationForm.value.pant_daybir,
-        eemail: this.registrationForm.value.patientemail,
-        passwo: this.registrationForm.value.pant_passwo,
-        document: this.registrationForm.value.pant_document,
+        email: this.registrationForm.value.patientemail,
+        password: this.registrationForm.value.pant_passwo,
+        docume: this.registrationForm.value.pant_document,
       };
+console.log(formData);
 
       this.patientService.registerPatient(formData).subscribe(
         response => {

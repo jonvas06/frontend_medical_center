@@ -17,12 +17,12 @@ export class DoctorRegistrationComponent {
   constructor(private fb: FormBuilder, private doctorService: DoctorService) {
     this.registrationForm = this.fb.group({
       user_ffname: ['', Validators.required],
-      user_sfname: ['', Validators.required],
+      user_sfname: [''],
       user_flname: ['', Validators.required],
-      user_slname: ['', Validators.required],
-      user_eemail: ['', Validators.required],
-      user_phonee: ['', Validators.required],
-      user_daybir: ['', Validators.required],
+      user_slname: [''],
+      user_email: ['', Validators.required],
+      user_phonee: [''],
+      user_daybir: [''],
       user_passwo: ['', Validators.required],
       user_docume: ['', Validators.required],
     });
@@ -37,10 +37,11 @@ export class DoctorRegistrationComponent {
         sfname: this.registrationForm.value.user_sfname,
         flname: this.registrationForm.value.user_flname,
         slname: this.registrationForm.value.user_slname,
-        daybir: this.registrationForm.value.user_eemail,
-        eemail: this.registrationForm.value.user_phonee,
-        passwo: this.registrationForm.value.user_passwo,
-        docume: this.registrationForm.value.user_document,
+        daybir: this.registrationForm.value.user_daybir,
+        phonee: this.registrationForm.value.user_phonee,
+        email: this.registrationForm.value.user_email,
+        password: this.registrationForm.value.user_passwo,
+        docume: this.registrationForm.value.user_docume,
       };
 
       this.doctorService.registerDoctor(formData).subscribe(
