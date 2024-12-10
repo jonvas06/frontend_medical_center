@@ -6,10 +6,10 @@ import { LoginComponent } from './login/login.component';
 import { AuthGuard } from './Guards/auth.guard';
 
 export const routes: Routes = [
-    {path: 'register-patient', component: PatientRegistrationComponent, canActivate: [AuthGuard]},
-    {path: 'register-doctor', component: DoctorRegistrationComponent},
+    {path: 'register-patient', component: PatientRegistrationComponent, canActivate: [AuthGuard], data: { roles: [2] } },
+    {path: 'register-doctor', component: DoctorRegistrationComponent, canActivate: [AuthGuard], data: { roles: [2] }},
     {path: 'login', component: LoginComponent},
-    {path: 'agendar-cita', component: AppointmentComponent},
+    {path: 'agendar-cita', component: AppointmentComponent, canActivate: [AuthGuard], data: { roles: [1] }},
     {path: '**', redirectTo: '', pathMatch: 'full'}
 
 ];
