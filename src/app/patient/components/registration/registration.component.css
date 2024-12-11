@@ -1,7 +1,9 @@
 form {
-    display: flex;
-    flex-direction: column;
-    max-width: 400px;
+    display: grid;
+    grid-template-columns: 340px 340px;
+    column-gap: 50px;
+    row-gap: 15px;
+    max-width: 700px;
     margin: auto;
 }
 
@@ -14,8 +16,7 @@ label {
 }
 
 input,
-textarea,
-button {
+textarea {
     padding: 8px;
     width: 100%;
 }
@@ -23,7 +24,13 @@ button {
 button {
     margin-top: 15px;
     background-color: #4CAF50;
+    height: 40px;
+    width: 340px;
     color: white;
     border: none;
     cursor: pointer;
+}
+
+.btn{
+    width: 340px;
 }
