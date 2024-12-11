@@ -1,0 +1,17 @@
+<form id="getAppoForm" (submit)="getAppointmentsByDocume()">
+    <h3>Buscar Citas por Documento</h3>
+  
+    <!-- Documento del paciente -->
+    <div>
+      <label for="docume">Documento del Paciente:</label>
+      <input type="text" id="docume" name="docume" required />
+    </div>
+  
+    <button type="submit">Buscar</button>
+  </form>
+  
+
+<div class="container">
+    <a href="agendar-cita" class="button">Agendar Cita</a>
+    <a href="actualizar-cita" class="button">Reprogramar Cita</a>
+</div>
