@@ -9,18 +9,19 @@ import { ReactiveFormsModule } from '@angular/forms';
   standalone: true,
   imports: [CommonModule, ReactiveFormsModule],
   templateUrl: './appointment-get.component.html',
-  styleUrls: ['./appointment-get.component.css']
+  styleUrls: ['./appointment-get.component.css'],
 })
 export class AppointmentGetComponent {
   getAppoForm: FormGroup;
-  appointments: any = null;
+  appointments: any[] | null = null;
+  userInfo: any = null;
   errorMessage: string | null = null;
 
   private apiUrl = 'http://localhost:3001/api/appo';
 
   constructor(private fb: FormBuilder, private http: HttpClient) {
     this.getAppoForm = this.fb.group({
-      docume: ['', Validators.required]
+      docume: ['', Validators.required],
     });
   }
 
@@ -33,14 +34,16 @@ export class AppointmentGetComponent {
     const formData = this.getAppoForm.value;
 
     this.http.post(`${this.apiUrl}/getbydocume`, formData).subscribe({
-      next: (response) => {
-        this.appointments = response;
+      next: (response: any) => {
+        this.userInfo = response; // Información del usuario
+        this.appointments = response.gen_appo || []; // Lista de citas
         this.errorMessage = null;
       },
       error: (err) => {
-        this.errorMessage = err.error || 'Error al buscar las citas';
+        this.errorMessage = err.error?.error || 'Error al buscar las citas';
         this.appointments = null;
-      }
+        this.userInfo = null;
+      },
     });
   }
 }
