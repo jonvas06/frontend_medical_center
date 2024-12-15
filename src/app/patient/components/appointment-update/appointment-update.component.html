@@ -1,0 +1,27 @@
+<form id="updateAppoForm" (submit)="updateAppointment()">
+    <h3>Actualizar Cita</h3>
+
+    <!-- ID de la cita a actualizar -->
+    <div>
+        <label for="idappo">ID de la Cita:</label>
+        <input type="number" id="idappo" name="idappo" required />
+    </div>
+
+    <!-- Nuevo estado de la cita -->
+    <div>
+        <label for="estado">Nuevo Estado:</label>
+        <select id="estado" name="estado" required>
+            <option value="Confirmada">Confirmada</option>
+            <option value="Cancelada">Cancelada</option>
+            <option value="Reprogramada">Reprogramada</option>
+        </select>
+    </div>
+
+    <button type="submit">Actualizar cita</button>
+</form>
+
+
+<div class="container">
+    <a href="agendar-cita" class="button">Agendar Cita</a>
+    <a href="buscar-cita" class="button">Cancelar Cita</a>
+</div>

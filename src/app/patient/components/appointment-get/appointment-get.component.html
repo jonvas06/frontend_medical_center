@@ -1,0 +1,45 @@
+<div class="form-container">
+  <form [formGroup]="getAppoForm" (submit)="getAppointmentsByDocume(); $event.preventDefault()">
+    <h3>Buscar Citas por Documento</h3>
+
+    <!-- Campo para el documento -->
+    <div>
+      <label for="docume">Documento del Paciente:</label>
+      <input type="text" id="docume" formControlName="docume" required />
+    </div>
+
+    <button type="submit">Buscar</button>
+  </form>
+</div>
+
+<div *ngIf="errorMessage" class="error">
+  {{ errorMessage }}
+</div>
+
+<div *ngIf="userInfo && appointments" class="results-container">
+  <h3>Información del Paciente</h3>
+  <p><strong>Nombre:</strong> {{ userInfo.name || 'Desconocido' }}</p>
+  <p><strong>Documento:</strong> {{ userInfo.user_docume }}</p>
+
+  <h3>Citas del Paciente</h3>
+  <ul>
+    <li *ngFor="let appo of appointments">
+      <p><strong>ID de Cita:</strong> {{ appo.appo_idappo }}</p>
+      <p><strong>Estado:</strong> {{ appo.appo_estado }}</p>
+      <p><strong>Fecha:</strong> {{ appo.appo_apdate | date: 'short' }}</p>
+      <p><strong>ID Usuario:</strong> {{ appo.appo_iduser }}</p>
+      <p><strong>ID Paciente:</strong> {{ appo.appo_idpant }}</p>
+      <p><strong>ID Especialista:</strong> {{ appo.appo_idespe }}</p>
+      <p><strong>ID Cronograma:</strong> {{ appo.appo_iddsch }}</p>
+    </li>
+  </ul>
+</div>
+
+<div *ngIf="!appointments && !errorMessage">
+  <p>No se encontraron citas asociadas al documento proporcionado.</p>
+</div>
+
+<div class="container">
+  <a href="agendar-cita" class="button">Agendar Cita</a>
+  <a href="actualizar-cita" class="button">Reprogramar Cita</a>
+</div>

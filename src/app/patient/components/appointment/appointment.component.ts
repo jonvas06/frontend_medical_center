@@ -53,7 +53,7 @@ export class AppointmentComponent {
 
     this.http.post(`${this.apiUrl}/create`, data).subscribe({
       next: (response) => {
-        alert('Appointment created successfully!');
+        alert('Cita creada');
         console.log(response);
       },
       error: (err) => {
@@ -73,7 +73,7 @@ export class AppointmentComponent {
 
     this.http.post(`${this.apiUrl}/update`, data).subscribe({
       next: () => {
-        alert('Appointment updated successfully!');
+        alert('cita actualizada correctamente!');
       },
       error: (err) => {
         alert(`Error: ${err.error}`);
@@ -92,7 +92,7 @@ export class AppointmentComponent {
 
     this.http.post(`${this.apiUrl}/getbydocume`, data).subscribe({
       next: (response) => {
-        alert('Appointments retrieved successfully! Check console for details.');
+        alert('Cita encontrada');
         console.log(response);
       },
       error: (err) => {
