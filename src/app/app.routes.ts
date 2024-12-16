@@ -8,6 +8,8 @@ import { LoginComponent } from './login/login.component';
 import { AuthGuard } from './Guards/auth.guard';
 import { PatientListComponent } from './patient/components/patient-list/patient-list.component';
 import { DoctorListComponent } from './doctor/components/doctor-list/doctor-list.component';
+import { ServiciosComponent } from './otherComponent/servicios/servicios.component';
+import { ContactoComponent } from './otherComponent/contacto/contacto.component';
 
 
 /**
@@ -25,6 +27,8 @@ export const routes: Routes = [
     {path: 'agendar-cita', component: AppointmentComponent, canActivate: [AuthGuard], data: { roles: [1,3,4] }},
     {path: 'buscar-cita', component: AppointmentGetComponent, /*canActivate: [AuthGuard], data: { roles: [1,3] }*/},
     {path: 'actualizar-cita', component: AppointmentUpdateComponent, /*canActivate: [AuthGuard], data: { roles: [1,3] }*/},
+    {path: 'servicios', component: ServiciosComponent},
+    {path: 'contacto', component: ContactoComponent},
     {path: '**', redirectTo: '', pathMatch: 'full'}
 
 ];
