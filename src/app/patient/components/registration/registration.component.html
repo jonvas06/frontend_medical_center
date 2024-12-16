@@ -1,6 +1,5 @@
 <h2>Registro de Paciente</h2>
 <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
-
     <div>
         <label for="pant_document">Documento Paciente:</label>
         <input id="pant_document" formControlName="pant_document" required />
@@ -27,8 +26,32 @@
     </div>
 
     <div>
+        <label for="patientGender">Género:</label>
+        <select id="patientGender" formControlName="patientGender" required>
+            <option value="">Seleccione un género</option>
+            <option value="M">Masculino</option>
+            <option value="F">Femenino</option>
+            <option value="O">Otro</option>
+            <option value="N">Prefiero no decir</option>
+        </select>
+    </div>
+
+    <div>
         <label for="patientphone">Teléfono:</label>
-        <input id="patientphone" formControlName="patientphone" />
+        <input 
+            id="patientphone" 
+            formControlName="patientphone" 
+            type="tel"
+            pattern="[+]?[0-9]{10,14}"
+            placeholder="+57 300 123 4567"
+        />
+        <div *ngIf="registrationForm.get('patientphone').invalid && 
+                    (registrationForm.get('patientphone').dirty || 
+                     registrationForm.get('patientphone').touched)">
+            <small *ngIf="registrationForm.get('patientphone').errors?.pattern">
+                Por favor ingrese un número de teléfono válido (10-14 dígitos)
+            </small>
+        </div>
     </div>
 
     <div>

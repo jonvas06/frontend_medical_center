@@ -30,7 +30,7 @@ export class LoginComponent {
       this.authService.login({ email: email, password: password }).subscribe({
         next: (response) => {
           console.log('Login exitoso:', response);
-
+          
           localStorage.setItem('token', response.token);
         },
         error: (error) => {

@@ -32,18 +32,17 @@ export class PatientRegistrationComponent {
     
     if (this.registrationForm.valid) {
       const formData = {
-        audsta: 'A',
-        idrole: 1, // id cualquiera que represente el rol de paciente
-        ffname: this.registrationForm.value.patientFName,
-        sfname: this.registrationForm.value.patientSName,
-        flname: this.registrationForm.value.patientFSame,
-        slname: this.registrationForm.value.patientSSame,
-        daybir: this.registrationForm.value.pant_daybir,
+        firstName: this.registrationForm.value.patientFName,
+        secondName: this.registrationForm.value.patientSName,
+        firstLastname: this.registrationForm.value.patientFSame,
+        secondLastname: this.registrationForm.value.patientSSame,
+        birthDate: this.registrationForm.value.pant_daybir,
         email: this.registrationForm.value.patientemail,
+        phone: this.registrationForm.value.patientemail,
+        gender: this.registrationForm.value.patientemail,
         password: this.registrationForm.value.pant_passwo,
-        docume: this.registrationForm.value.pant_document,
+        document: this.registrationForm.value.pant_document,
       };
-console.log(formData);
 
       this.patientService.registerPatient(formData).subscribe(
         response => {
