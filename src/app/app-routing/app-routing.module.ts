@@ -6,6 +6,7 @@ import { PatientRegistrationComponent } from '../patient/components/registration
 import { DoctorRegistrationComponent } from '../doctor/components/registration/registration.component';
 import { ContactoComponent } from '../otherComponent/contacto/contacto.component';
 import { ServiciosComponent } from '../otherComponent/servicios/servicios.component';
+import { InicioComponent } from '../inicio/inicio.component';
 
 const routes: Routes = [
   { path: 'agendar-cita', component: AppointmentComponent },
@@ -13,10 +14,10 @@ const routes: Routes = [
   { path: 'register-doctor', component: DoctorRegistrationComponent },
   { path: 'contacto', component: ContactoComponent },
   { path: 'servicios', component: ServiciosComponent },
+  { path: 'inicio', component: InicioComponent },
   // Otras rutas aplicación
-  { path: '', redirectTo: '/inicio', pathMatch: 'full' },
-  { path: '', redirectTo: '/Admin', pathMatch: 'full' },
-  { path: '**', redirectTo: '/inicio' }
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: '**', redirectTo: '/home' }
 ];
 
 @NgModule({

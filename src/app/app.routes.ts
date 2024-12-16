@@ -10,6 +10,7 @@ import { PatientListComponent } from './patient/components/patient-list/patient-
 import { DoctorListComponent } from './doctor/components/doctor-list/doctor-list.component';
 import { ServiciosComponent } from './otherComponent/servicios/servicios.component';
 import { ContactoComponent } from './otherComponent/contacto/contacto.component';
+import { InicioComponent } from './inicio/inicio.component';
 
 
 /**
@@ -29,6 +30,7 @@ export const routes: Routes = [
     {path: 'actualizar-cita', component: AppointmentUpdateComponent, /*canActivate: [AuthGuard], data: { roles: [1,3] }*/},
     {path: 'servicios', component: ServiciosComponent},
     {path: 'contacto', component: ContactoComponent},
-    {path: '**', redirectTo: '', pathMatch: 'full'}
-
+    {path: 'inicio', component: InicioComponent },
+    {path: '**', redirectTo: '', pathMatch: 'full'},
+    {path: '', redirectTo: '', pathMatch: 'full'}
 ];
