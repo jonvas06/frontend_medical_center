@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PatientService } from '../../../services/patient.service';
 
@@ -9,7 +9,7 @@ import { PatientService } from '../../../services/patient.service';
   templateUrl: './patient-list.component.html',
   styleUrl: './patient-list.component.css'
 })
-export class PatientListComponent {
+export class PatientListComponent implements OnInit {
   patients: any[] = [];
 
   constructor(private patientService: PatientService) { }
