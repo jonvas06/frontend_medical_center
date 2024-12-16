@@ -23,4 +23,10 @@ export class NavbarComponent implements AfterViewInit {
       });
     }
   }
+
+  closeMenu() {
+    if (this.navbarLinks) {
+      this.navbarLinks.nativeElement.classList.remove('active');
+    }
+  }
 }

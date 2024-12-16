@@ -12,10 +12,6 @@ import { DoctorRegistrationComponent } from './doctor/components/registration/re
   imports: [
     RouterOutlet, 
     NavbarComponent,
-    PatientRegistrationComponent,
-    DoctorRegistrationComponent,
-    AppointmentComponent,
-    RouterLink,
     ReactiveFormsModule
   ],
   templateUrl: './app.component.html',
