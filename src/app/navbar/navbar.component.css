@@ -1,4 +1,4 @@
-/* Estilos de la Navbar */
+/* Estilos principales de la Navbar */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -6,6 +6,7 @@
     background-color: #00796B;
     padding: 1rem 2rem;
     color: white;
+    position: relative;
 }
 
 .navbar-logo .logo {
@@ -16,6 +17,8 @@
     list-style-type: none;
     display: flex;
     gap: 2rem;
+    margin: 0;
+    padding: 0;
 }
 
 .navbar-links a {
@@ -28,13 +31,45 @@
     text-decoration: underline;
 }
 
-/* Estilos para el Título */
-.title-container {
-    text-align: center;
-    margin-top: 2rem;
+/* Estilos del botón de menú (Responsive) */
+.menu-toggle {
+    display: none;
+    background-color: #00796B;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
 }
 
-.title-container h1 {
-    font-size: 2.5rem;
-    color: #00796B;
+/* Estilos para el estado desplegable del menú */
+.navbar-links.active {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #00796B;
+    padding: 1rem 0;
+    z-index: 1000;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.navbar-links.active a {
+    padding: 1rem 2rem;
+    text-align: left;
+}
+
+/* Diseño Responsive */
+@media (max-width: 768px) {
+    .navbar-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .menu-toggle {
+        display: block;
+        /* Mostrar el botón de menú */
+    }
 }

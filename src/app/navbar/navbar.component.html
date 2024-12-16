@@ -1,16 +1,17 @@
-<nav class="navbar">
-    <div class="navbar-logo">
-      <img src="../../assets/logo.jpg" alt="Logo Salud y Vida" class="logo">
-    </div>
-    <ul class="navbar-links">
-      <li><a class="button" routerLink="/inicio">Inicio</a></li>
-      <li><a class="button" routerLink="/agendar-cita">Agendar Cita</a></li>
-      <li><a class="button" routerLink="/register-patient">Registrar Paciente</a></li>
-      <li><a class="button" routerLink="/patient-list">Listado Pacientes</a></li>
-      <li><a class="button" routerLink="/register-doctor">Registrar Doctor</a></li>    
-      <li><a class="button" routerLink="/doctor-list">Listado Doctores</a></li>
-      <li><a class="button" routerLink="/servicios">Servicios</a></li>
-      <li><a class="button" routerLink="/contacto">Contacto</a></li>
-    </ul>
+<nav class="navbar"> 
+  <div class="navbar-logo">
+    <img src="../../assets/logo.jpg" alt="Logo Salud y Vida" class="logo">
+  </div>
+  <button class="menu-toggle" #menuToggle>☰</button>
+  <ul class="navbar-links" #navbarLinks>
+    <li><a class="button" routerLink="/inicio">Inicio</a></li>
+    <li><a class="button" routerLink="/agendar-cita">Agendar Cita</a></li>
+    <li><a class="button" routerLink="/register-patient">Registrar Paciente</a></li>
+    <li><a class="button" routerLink="/patient-list">Listado Pacientes</a></li>
+    <li><a class="button" routerLink="/register-doctor">Registrar Doctor</a></li>
+    <li><a class="button" routerLink="/doctor-list">Listado Doctores</a></li>
+    <li><a class="button" routerLink="/servicios">Servicios</a></li>
+    <li><a class="button" routerLink="/contacto">Contacto</a></li>
+  </ul>
 </nav>
-<router-outlet/>
+<router-outlet></router-outlet>
